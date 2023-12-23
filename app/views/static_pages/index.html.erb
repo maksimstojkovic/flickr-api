@@ -1,2 +1,20 @@
-<h1>StaticPages#index</h1>
-<p>Find me in app/views/static_pages/index.html.erb</p>
+<h1>Flikr Search</h1>
+
+<%= form_with scope: :search, url: root_path, method: :get do |f| %>
+  <%= f.label :username, "Username*:" %>
+  <%= f.text_field :username, value: @search_params[:username] %>
+
+  <%= f.submit "Search", name: "" %>
+<% end %>
+
+<% if @photo_urls.empty?%>
+  <% if !@search_params.empty? %>
+    <p>User does not have any images, or user does not exist.</p>
+  <% end %>
+<% else %>
+  <h3>Results</h3>
+  <% @photo_urls.each do |url| %>
+    <%= image_tag url %>
+  <% end %>
+<% end %>
+
