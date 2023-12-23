@@ -1,24 +1,9 @@
-# README
+# Flickr API Test App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails app which searches Flickr users and returns their public photos.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Flickr API information is stored in `config/application.yml` (Figaro config file, excluded in `.gitignore`) with the following format:
+```
+FLICKR_API_KEY: <api-key>
+FLICKR_SHARED_SECRET: <secret>
+```
